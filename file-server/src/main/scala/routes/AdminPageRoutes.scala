@@ -35,7 +35,7 @@ class AdminPageRoutes(storage: FileStorage[IO], authClient: AuthClient[IO], audi
           logs    <- auditLog.list(20).map(entries => entries.map(_.details))
           resp    <- html.adminPage(users, allFiles, logs)
         } yield resp
-      case _ => SeeOther(Location(uri"https://localhost:8081/login"))
+      case _ => SeeOther(Location(uri"https://194.67.92.112:8081/login"))
     }
   }
 }

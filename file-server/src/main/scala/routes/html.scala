@@ -14,36 +14,47 @@ object html {
   private def page(title: String, body: String, isAdmin: Boolean = false, scripts: String = ""): IO[Response[IO]] = {
     val adminLink = if (isAdmin) """<a class="nav-link" href="/admin">Админка</a>""" else ""
     val htmlStr = s"""<!DOCTYPE html><html><head><title>$title</title>
-    <meta charset="UTF-8">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-      body{background-color:#f8f9fa;padding:20px}
-      .navbar{margin-bottom:20px}
-      .card{margin-bottom:20px}
-      .table td, .table th{vertical-align:middle}
-      .btn-action{margin-right:5px}
-    </style>
-    </head><body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/files">Файловый сервер</a>
-        <div class="navbar-nav">
-          <a class="nav-link" href="/files">Файлы</a>
-          <a class="nav-link" href="/upload">Загрузить</a>
-          <a class="nav-link" href="/search">Поиск</a>
-          $adminLink
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+      <style>
+        body{background-color:#f8f9fa;padding:20px}
+        .navbar{margin-bottom:20px}
+        .card{margin-bottom:20px}
+        .table td, .table th{vertical-align:middle}
+        .btn-action{margin-right:5px}
+        @media (max-width: 576px) {
+          .table-responsive { display: block; width: 100%; overflow-x: auto; }
+          .btn-action { margin-bottom: 5px; }
+          .navbar-nav { flex-direction: column; }
+        }
+      </style>
+      </head><body>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/files">Файловый сервер</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav">
+              <a class="nav-link" href="/files">Файлы</a>
+              <a class="nav-link" href="/upload">Загрузить</a>
+              <a class="nav-link" href="/search">Поиск</a>
+              $adminLink
+            </div>
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link" href="/logout">Выйти</a>
+            </div>
+          </div>
         </div>
-        <div class="navbar-nav ms-auto">
-          <a class="nav-link" href="/logout">Выйти</a>
-        </div>
+      </nav>
+      <div class="container">
+        $body
       </div>
-    </nav>
-    <div class="container">
-      $body
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    $scripts
-    </body></html>"""
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      $scripts
+      </body></html>"""
     Ok(htmlStr).map(_.withContentType(`Content-Type`(MediaType.text.html)))
   }
 
@@ -54,22 +65,24 @@ object html {
         s"<a href='/delete/${f.id}' class='btn btn-sm btn-danger btn-action'>Удалить</a>"
       else ""
       s"""<tr>
-      <td>📄 ${f.originalName}</td>
-      <td>${f.size / 1024} KB</td>
-      <td>${f.uploadedByLogin}</td>
-      <td>${f.uploadedAt.atZone(ZoneId.systemDefault()).format(formatter)}</td>
-      <td>
-        <a href='/download/${f.id}' class='btn btn-sm btn-primary btn-action'>Скачать</a>
-        $deleteButton
-      </td>
-    </tr>"""
+        <td>📄 ${f.originalName}</td>
+        <td class="d-none d-md-table-cell">${f.size / 1024} KB</td>
+        <td class="d-none d-md-table-cell">${f.uploadedByLogin}</td>
+        <td class="d-none d-md-table-cell">${f.uploadedAt.atZone(ZoneId.systemDefault()).format(formatter)}</td>
+        <td>
+          <a href='/download/${f.id}' class='btn btn-sm btn-primary btn-action'>Скачать</a>
+          $deleteButton
+        </td>
+      </tr>"""
     }.mkString
     page("Файлы",
       s"""<h2>Список файлов</h2>
-    <table class="table table-striped">
-      <thead><tr><th>Имя</th><th>Размер</th><th>Загрузил</th><th>Время загрузки</th><th>Действия</th></tr></thead>
-      <tbody>$fileItems</tbody>
-    </table>""",
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead><tr><th>Имя</th><th class="d-none d-md-table-cell">Размер</th><th class="d-none d-md-table-cell">Загрузил</th><th class="d-none d-md-table-cell">Время загрузки</th><th>Действия</th></tr></thead>
+          <tbody>$fileItems</tbody>
+        </table>
+      </div>""",
       isAdmin = isAdmin)
   }
 
@@ -122,9 +135,9 @@ object html {
     val items = results.map(f =>
       s"""<tr>
         <td>📄 ${f.originalName}</td>
-        <td>${f.size / 1024} KB</td>
-        <td>${f.uploadedByLogin}</td>
-        <td>${f.uploadedAt.atZone(ZoneId.systemDefault()).format(formatter)}</td>
+        <td class="d-none d-md-table-cell">${f.size / 1024} KB</td>
+        <td class="d-none d-md-table-cell">${f.uploadedByLogin}</td>
+        <td class="d-none d-md-table-cell">${f.uploadedAt.atZone(ZoneId.systemDefault()).format(formatter)}</td>
         <td><a href='/download/${f.id}' class='btn btn-sm btn-primary'>Скачать</a></td>
       </tr>"""
     ).mkString
@@ -138,10 +151,12 @@ object html {
           <button class="btn btn-primary">Искать</button>
         </div>
       </form>
-      <table class="table table-striped mt-3">
-        <thead><tr><th>Имя</th><th>Размер</th><th>Загрузил</th><th>Время загрузки</th><th></th></tr></thead>
-        <tbody>$items</tbody>
-      </table>
+      <div class="table-responsive mt-3">
+        <table class="table table-striped">
+          <thead><tr><th>Имя</th><th class="d-none d-md-table-cell">Размер</th><th class="d-none d-md-table-cell">Загрузил</th><th class="d-none d-md-table-cell">Время загрузки</th><th></th></tr></thead>
+          <tbody>$items</tbody>
+        </table>
+      </div>
       <a href="/files" class="btn btn-secondary mt-2">Назад к файлам</a>""")
   }
 
@@ -181,30 +196,36 @@ object html {
       <div class="card">
         <div class="card-header"><h5>Пользователи</h5></div>
         <div class="card-body">
-          <table class="table">
-            <thead><tr><th>Логин</th><th>Роль</th><th>Действия</th></tr></thead>
-            <tbody>$userItems</tbody>
-          </table>
+          <div class="table-responsive">
+            <table class="table">
+              <thead><tr><th>Логин</th><th>Роль</th><th>Действия</th></tr></thead>
+              <tbody>$userItems</tbody>
+            </table>
+          </div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-header"><h5>Все файлы</h5></div>
         <div class="card-body">
-          <table class="table">
-            <thead><tr><th>Имя</th><th>Владелец</th><th>Загружен</th><th>Действия</th></tr></thead>
-            <tbody>$fileItems</tbody>
-          </table>
+          <div class="table-responsive">
+            <table class="table">
+              <thead><tr><th>Имя</th><th>Владелец</th><th>Загружен</th><th>Действия</th></tr></thead>
+              <tbody>$fileItems</tbody>
+            </table>
+          </div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-header"><h5>Логи</h5></div>
         <div class="card-body">
-          <table class="table">
-            <thead><tr><th>Событие</th></tr></thead>
-            <tbody>$logItems</tbody>
-          </table>
+          <div class="table-responsive">
+            <table class="table">
+              <thead><tr><th>Событие</th></tr></thead>
+              <tbody>$logItems</tbody>
+            </table>
+          </div>
         </div>
       </div>
       """,
