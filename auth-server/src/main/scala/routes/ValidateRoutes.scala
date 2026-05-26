@@ -5,6 +5,7 @@ import org.http4s.*
 import org.http4s.dsl.io.*
 import org.http4s.circe.CirceEntityEncoder.*
 import algebras.Auth
+import domain.UserInfo
 import org.typelevel.ci.CIString
 import io.circe.generic.auto.*
 

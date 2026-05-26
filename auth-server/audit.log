@@ -58,3 +58,4 @@
 {"timestamp":"2026-05-26T17:58:57.182572Z","event":"LOGIN","userId":"2f720606-89a2-46f3-9c56-e1491f6fcf24","ip":null,"details":"User kirik logged in"}
 {"timestamp":"2026-05-26T17:59:35.567369400Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
 {"timestamp":"2026-05-26T18:09:52.400195800Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T22:03:33.657456800Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}

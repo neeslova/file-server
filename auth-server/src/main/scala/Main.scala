@@ -35,7 +35,7 @@ object Main extends IOApp.Simple {
     val viewRoutes: HttpRoutes[IO] = HttpRoutes.of[IO] {
       case GET -> Root / "login"    => routes.html.loginPage(None)
       case GET -> Root / "register" => routes.html.registerPage(None)
-      case GET -> Root              => SeeOther(Location(uri"https://194.67.92.112:8082/files"))
+      case GET -> Root              => SeeOther(Location(uri"https://localhost:8082/files"))
     }
     val authRoutes  = AuthRoutes(auth).routes
     val adminRoutes = AdminRoutes(auth).routes

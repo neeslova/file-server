@@ -5,7 +5,7 @@ import fs2.Stream
 import java.util.UUID
 import scala.concurrent.duration.Duration
 
-trait FileStorage[F[_]] {
+trait FileStorage[F[_]]:
   def uploadFile(userId: UUID, fileName: String, parentFolderId: Option[UUID], password: String, uploadedByLogin: String, data: Stream[F, Byte]): F[Either[FileError, FileMeta]]
   def downloadFile(fileId: UUID, password: String): F[Either[FileError, (FileMeta, Stream[F, Byte])]]
   def getFileMeta(fileId: UUID): F[Option[FileMeta]]
@@ -19,4 +19,3 @@ trait FileStorage[F[_]] {
   def deleteShareLink(token: String): F[Unit]
   def getUserUsage(userId: UUID): F[Long]
   def getUserQuota(userId: UUID): F[Long]
-}
