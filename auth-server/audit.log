@@ -1,0 +1,60 @@
+{"timestamp":"2026-05-26T13:24:47.107485600Z","event":"REGISTER","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin registered"}
+{"timestamp":"2026-05-26T13:24:54.143684Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T13:28:36.815253700Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T13:28:48.527017900Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T13:36:01.102030400Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T13:36:30.746602200Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T13:40:08.121652900Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T13:42:36.371780400Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T13:47:05.918129600Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T13:57:12.310508600Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T14:05:21.586453Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T14:17:49.950535800Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T14:18:52.263827100Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T14:24:27.501950700Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T14:36:41.689889Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T14:40:11.746377500Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T14:40:33.944848600Z","event":"REGISTER","userId":"1a81c510-0168-4c37-b63e-e4a0adfed327","ip":null,"details":"User kirik registered"}
+{"timestamp":"2026-05-26T14:40:47.653848300Z","event":"LOGIN","userId":"1a81c510-0168-4c37-b63e-e4a0adfed327","ip":null,"details":"User kirik logged in"}
+{"timestamp":"2026-05-26T14:41:17.062996900Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T14:45:09.626977400Z","event":"LOGIN","userId":"1a81c510-0168-4c37-b63e-e4a0adfed327","ip":null,"details":"User kirik logged in"}
+{"timestamp":"2026-05-26T15:04:09.423242900Z","event":"LOGIN","userId":"1a81c510-0168-4c37-b63e-e4a0adfed327","ip":null,"details":"User kirik logged in"}
+{"timestamp":"2026-05-26T15:06:46.179113900Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T15:35:43.441949600Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T15:36:01.846609500Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T15:37:13.695949300Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T15:42:55.580238300Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T15:46:38.665250100Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T15:53:42.989330700Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T15:58:41.477254500Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T16:11:49.882993700Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T16:15:45.443352200Z","event":"REGISTER","userId":"f20ffb51-42f7-49de-9b54-fa4e1c0340e0","ip":null,"details":"User aher registered"}
+{"timestamp":"2026-05-26T16:15:50.134716800Z","event":"LOGIN","userId":"f20ffb51-42f7-49de-9b54-fa4e1c0340e0","ip":null,"details":"User aher logged in"}
+{"timestamp":"2026-05-26T16:34:05.839672400Z","event":"LOGIN","userId":"1a81c510-0168-4c37-b63e-e4a0adfed327","ip":null,"details":"User kirik logged in"}
+{"timestamp":"2026-05-26T16:34:43.946417600Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T16:38:46.125312800Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T16:39:18.978232900Z","event":"LOGIN","userId":"1a81c510-0168-4c37-b63e-e4a0adfed327","ip":null,"details":"User kirik logged in"}
+{"timestamp":"2026-05-26T16:39:25.706753800Z","event":"LOGIN","userId":"1a81c510-0168-4c37-b63e-e4a0adfed327","ip":null,"details":"User kirik logged in"}
+{"timestamp":"2026-05-26T16:39:56.907796800Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T16:52:36.722176600Z","event":"LOGIN","userId":"1a81c510-0168-4c37-b63e-e4a0adfed327","ip":null,"details":"User kirik logged in"}
+{"timestamp":"2026-05-26T16:52:44.789132600Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T16:57:08.269677Z","event":"DELETE_USER","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User kirik deleted by admin"}
+{"timestamp":"2026-05-26T16:57:27.872092Z","event":"CHANGE_PASSWORD","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"Password changed for user aher by admin"}
+{"timestamp":"2026-05-26T16:57:46.342139100Z","event":"LOGIN","userId":"f20ffb51-42f7-49de-9b54-fa4e1c0340e0","ip":null,"details":"User aher logged in"}
+{"timestamp":"2026-05-26T16:58:01.781662800Z","event":"REGISTER","userId":"2f720606-89a2-46f3-9c56-e1491f6fcf24","ip":null,"details":"User kirik registered"}
+{"timestamp":"2026-05-26T16:58:07.551479400Z","event":"LOGIN","userId":"2f720606-89a2-46f3-9c56-e1491f6fcf24","ip":null,"details":"User kirik logged in"}
+{"timestamp":"2026-05-26T16:58:17.625365Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T16:58:55.383031Z","event":"LOGIN","userId":"2f720606-89a2-46f3-9c56-e1491f6fcf24","ip":null,"details":"User kirik logged in"}
+{"timestamp":"2026-05-26T16:59:05.937378100Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T17:06:46.727027900Z","event":"LOGIN","userId":"2f720606-89a2-46f3-9c56-e1491f6fcf24","ip":null,"details":"User kirik logged in"}
+{"timestamp":"2026-05-26T17:08:45.396884500Z","event":"LOGIN","userId":"2f720606-89a2-46f3-9c56-e1491f6fcf24","ip":null,"details":"User kirik logged in"}
+{"timestamp":"2026-05-26T17:09:22.969824100Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T17:10:45.172892Z","event":"LOGIN","userId":"f20ffb51-42f7-49de-9b54-fa4e1c0340e0","ip":null,"details":"User aher logged in"}
+{"timestamp":"2026-05-26T17:12:57.011640400Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T17:30:58.816862800Z","event":"LOGIN","userId":"2f720606-89a2-46f3-9c56-e1491f6fcf24","ip":null,"details":"User kirik logged in"}
+{"timestamp":"2026-05-26T17:35:49.165909100Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T17:36:00.883030600Z","event":"LOGIN","userId":"2f720606-89a2-46f3-9c56-e1491f6fcf24","ip":null,"details":"User kirik logged in"}
+{"timestamp":"2026-05-26T17:37:05.975951600Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T17:58:57.182572Z","event":"LOGIN","userId":"2f720606-89a2-46f3-9c56-e1491f6fcf24","ip":null,"details":"User kirik logged in"}
+{"timestamp":"2026-05-26T17:59:35.567369400Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}
+{"timestamp":"2026-05-26T18:09:52.400195800Z","event":"LOGIN","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":null,"details":"User admin logged in"}

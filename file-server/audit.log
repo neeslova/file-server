@@ -1,0 +1,31 @@
+{"timestamp":"2026-05-26T13:58:13.417466400Z","event":"UPLOAD","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":"::1","details":"File меню.pdf uploaded"}
+{"timestamp":"2026-05-26T14:06:00.229028400Z","event":"UPLOAD","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":"::1","details":"File меню.pdf uploaded"}
+{"timestamp":"2026-05-26T14:25:00.539005800Z","event":"UPLOAD","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":"::1","details":"File Лаб 1 Коженков 23-по-2 ПОВС.docx uploaded"}
+{"timestamp":"2026-05-26T14:36:58.612141500Z","event":"DOWNLOAD","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":"::1","details":"File меню.pdf downloaded"}
+{"timestamp":"2026-05-26T14:37:22.679511700Z","event":"DELETE","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":"::1","details":"File меню.pdf deleted"}
+{"timestamp":"2026-05-26T14:37:27.071251800Z","event":"DOWNLOAD","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":"::1","details":"File Лаб 1 Коженков 23-по-2 ПОВС.docx downloaded"}
+{"timestamp":"2026-05-26T14:41:01.064962500Z","event":"UPLOAD","userId":"1a81c510-0168-4c37-b63e-e4a0adfed327","ip":"::1","details":"File Лаб 2 Коженков 23-по-2 ПОВС.docx uploaded"}
+{"timestamp":"2026-05-26T14:42:20.061155700Z","event":"DELETE","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":"::1","details":"File &#1051;&#1072;&#1073;&#1072; deleted"}
+{"timestamp":"2026-05-26T14:42:27.492502300Z","event":"UPLOAD","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":"::1","details":"File Теор 1.docx uploaded"}
+{"timestamp":"2026-05-26T14:42:46.162035300Z","event":"DOWNLOAD","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":"::1","details":"File Теор 1.docx downloaded"}
+{"timestamp":"2026-05-26T15:04:54.090719900Z","event":"UPLOAD","userId":"1a81c510-0168-4c37-b63e-e4a0adfed327","ip":"::1","details":"File Лаб 1 Коженков 23-по-2 ПОВС.docx uploaded"}
+{"timestamp":"2026-05-26T15:05:13.051100600Z","event":"DOWNLOAD","userId":"1a81c510-0168-4c37-b63e-e4a0adfed327","ip":"::1","details":"Файл Лаб 1 Коженков 23-по-2 ПОВС.docx скачан"}
+{"timestamp":"2026-05-26T15:05:23.647482100Z","event":"DELETE","userId":"1a81c510-0168-4c37-b63e-e4a0adfed327","ip":"::1","details":"Файл Лаб 1 Коженков 23-по-2 ПОВС.docx удалён"}
+{"timestamp":"2026-05-26T15:05:28.595249500Z","event":"UPLOAD","userId":"1a81c510-0168-4c37-b63e-e4a0adfed327","ip":"::1","details":"File Лаб 1 Коженков 23-по-2 ПОВС.docx uploaded"}
+{"timestamp":"2026-05-26T15:06:03.331752300Z","event":"UPLOAD","userId":"1a81c510-0168-4c37-b63e-e4a0adfed327","ip":"::1","details":"File Лаб 3 Коженков 23-по-2 ПОВС.docx uploaded"}
+{"timestamp":"2026-05-26T15:06:08.944938Z","event":"UPLOAD","userId":"1a81c510-0168-4c37-b63e-e4a0adfed327","ip":"::1","details":"File Теор 1.docx uploaded"}
+{"timestamp":"2026-05-26T15:07:01.664410300Z","event":"UPLOAD","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":"::1","details":"File Теор 2.docx uploaded"}
+{"timestamp":"2026-05-26T15:07:09.283156400Z","event":"DOWNLOAD","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":"::1","details":"Файл Лаб 1 Коженков 23-по-2 ПОВС.docx скачан"}
+{"timestamp":"2026-05-26T16:34:21.997262100Z","event":"DOWNLOAD","userId":"1a81c510-0168-4c37-b63e-e4a0adfed327","ip":"::1","details":"Файл Лаб 1 Коженков 23-по-2 ПОВС.docx скачан"}
+{"timestamp":"2026-05-26T16:39:43.725814600Z","event":"UPLOAD","userId":"1a81c510-0168-4c37-b63e-e4a0adfed327","ip":"::1","details":"File Коженков Кирилл 23-по-2 ЭСОС лаб 3.docx uploaded"}
+{"timestamp":"2026-05-26T17:08:57.622513700Z","event":"UPLOAD","userId":"2f720606-89a2-46f3-9c56-e1491f6fcf24","ip":"::1","details":"File Коженков Кирилл 23-по-2 ЭСОС лаб 2.docx uploaded"}
+{"timestamp":"2026-05-26T17:09:06.796604100Z","event":"DELETE","userId":"2f720606-89a2-46f3-9c56-e1491f6fcf24","ip":"::1","details":"Файл Коженков Кирилл 23-по-2 ЭСОС лаб 2.docx удалён"}
+{"timestamp":"2026-05-26T17:09:12.782531600Z","event":"UPLOAD","userId":"2f720606-89a2-46f3-9c56-e1491f6fcf24","ip":"::1","details":"File Коженков Кирилл 23-по-2 ЭСОС лаб 2.docx uploaded"}
+{"timestamp":"2026-05-26T17:09:57.674286800Z","event":"UPLOAD","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":"::1","details":"File Коженков Кирилл 23-по-2 ЭСОС лаб 1.docx uploaded"}
+{"timestamp":"2026-05-26T17:10:07.678141Z","event":"DOWNLOAD","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":"::1","details":"Файл Коженков Кирилл 23-по-2 ЭСОС лаб 1.docx скачан"}
+{"timestamp":"2026-05-26T17:10:57.634641600Z","event":"UPLOAD","userId":"f20ffb51-42f7-49de-9b54-fa4e1c0340e0","ip":"::1","details":"File Кожеков Кирилл БД ЛК 12 неделя.docx uploaded"}
+{"timestamp":"2026-05-26T17:11:01.690899600Z","event":"UPLOAD","userId":"f20ffb51-42f7-49de-9b54-fa4e1c0340e0","ip":"::1","details":"File Коженков Кирилл БД 23-по-2 Лаб 3.docx uploaded"}
+{"timestamp":"2026-05-26T17:11:06.325436400Z","event":"UPLOAD","userId":"f20ffb51-42f7-49de-9b54-fa4e1c0340e0","ip":"::1","details":"File Коженков Кирилл БД 23-по-2 Лаб 8.docx uploaded"}
+{"timestamp":"2026-05-26T17:31:09.451058400Z","event":"UPLOAD","userId":"2f720606-89a2-46f3-9c56-e1491f6fcf24","ip":"::1","details":"File Коженков Кирилл БД 23-по-2 Лаб 3.docx uploaded"}
+{"timestamp":"2026-05-26T18:16:58.488005200Z","event":"UPLOAD","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":"::1","details":"Пользователь admin загрузил файл Коженков 23-по-2 Задание 2.docx"}
+{"timestamp":"2026-05-26T18:17:05.071937300Z","event":"UPLOAD","userId":"21166e7c-9181-4218-b563-48c56165f011","ip":"::1","details":"Пользователь admin загрузил файл Коженков Кирилл 23-по-2 5 лаба.docx"}
