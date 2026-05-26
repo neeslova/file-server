@@ -1,21 +1,19 @@
 package interpreters
 
-import cats.effect.{IO, Resource}
-import org.http4s.*
-import org.http4s.client.Client
-import org.http4s.ember.client.EmberClientBuilder
-import org.http4s.circe.CirceEntityDecoder.*
+import cats.effect.IO
 import algebras.AuthClient
 import domain.UserInfo
-import org.typelevel.ci.CIString
+import io.circe.parser.*
+import io.circe.syntax.*
 import io.circe.generic.auto.*
+import java.net.{HttpURLConnection, URI}
 import javax.net.ssl.{SSLContext, TrustManager, X509TrustManager}
 import java.security.cert.X509Certificate
 
 class AuthClientInterpreter(authServiceUrl: String) extends AuthClient[IO] {
 
-  // Устанавливаем глобальный SSLContext, который доверяет всем сертификатам
-  locally {
+  // Создаём SSLContext, который доверяет всем сертификатам (для разработки)
+  private val trustingSSLContext: SSLContext = {
     val trustManager = new X509TrustManager {
       def getAcceptedIssuers: Array[X509Certificate] = Array.empty
       def checkClientTrusted(chain: Array[X509Certificate], authType: String): Unit = ()
@@ -23,32 +21,40 @@ class AuthClientInterpreter(authServiceUrl: String) extends AuthClient[IO] {
     }
     val ctx = SSLContext.getInstance("TLS")
     ctx.init(null, Array(trustManager), null)
-    SSLContext.setDefault(ctx)
+    ctx
   }
 
-  private val clientResource: Resource[IO, Client[IO]] = EmberClientBuilder.default[IO].build
+  private def makeRequest(path: String, token: String): IO[String] = IO.blocking {
+    val url = new URI(s"$authServiceUrl$path").toURL
+    val conn = url.openConnection().asInstanceOf[HttpURLConnection]
+    conn.setRequestMethod("GET")
+    conn.setRequestProperty("Authorization", s"Bearer $token")
+    conn.setConnectTimeout(5000)
+    conn.setReadTimeout(5000)
+
+    // Применяем доверяющий SSLContext
+    conn match {
+      case httpsConn: javax.net.ssl.HttpsURLConnection =>
+        httpsConn.setSSLSocketFactory(trustingSSLContext.getSocketFactory)
+        httpsConn.setHostnameVerifier((_, _) => true)
+      case _ => ()
+    }
+
+    val status = conn.getResponseCode
+    if (status == 200) {
+      scala.io.Source.fromInputStream(conn.getInputStream).mkString
+    } else {
+      throw new RuntimeException(s"Request failed with status $status")
+    }
+  }
 
   def validateToken(token: String): IO[Option[UserInfo]] =
-    clientResource.use { httpClient =>
-      val request = Request[IO](Method.POST, Uri.unsafeFromString(s"$authServiceUrl/validate"))
-        .withHeaders(Header.Raw(CIString("Authorization"), s"Bearer $token"))
-      httpClient.run(request).use { response =>
-        response.status match {
-          case Status.Ok => response.as[UserInfo].map(Some(_))
-          case _         => IO.pure(None)
-        }
-      }
-    }
+    makeRequest("/validate", token).map { response =>
+      decode[UserInfo](response).toOption
+    }.handleError(_ => None)
 
   def listUsers(token: String): IO[Option[List[UserInfo]]] =
-    clientResource.use { httpClient =>
-      val request = Request[IO](Method.GET, Uri.unsafeFromString(s"$authServiceUrl/admin/users"))
-        .withHeaders(Header.Raw(CIString("Authorization"), s"Bearer $token"))
-      httpClient.run(request).use { response =>
-        response.status match {
-          case Status.Ok => response.as[List[UserInfo]].map(Some(_))
-          case _         => IO.pure(None)
-        }
-      }
-    }
+    makeRequest("/admin/users", token).map { response =>
+      decode[List[UserInfo]](response).toOption
+    }.handleError(_ => None)
 }
