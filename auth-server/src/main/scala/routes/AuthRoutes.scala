@@ -21,7 +21,7 @@ class AuthRoutes(auth: Auth[IO]) {
       auth.login(loginReq).flatMap {
         case Left(error) => html.loginPage(Some(error.message))
         case Right(tokens) =>
-          SeeOther(Location(uri"https://localhost:8082/files"))
+          SeeOther(Location(uri"https://194.67.92.112:8082/files"))
             .map(_.addCookie(ResponseCookie("jwt", tokens.accessToken, path = Some("/"))))
       }
     }
@@ -32,7 +32,7 @@ class AuthRoutes(auth: Auth[IO]) {
       val regReq = RegisterRequest(form.getFirstOrElse("login", ""), form.getFirstOrElse("password", ""))
       auth.register(regReq).flatMap {
         case Left(error) => html.registerPage(Some(error.message))
-        case Right(_)    => SeeOther(Location(uri"https://localhost:8081/login"))
+        case Right(_)    => SeeOther(Location(uri"https://194.67.92.112:8081/login"))
       }
     }
   }
