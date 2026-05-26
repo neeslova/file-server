@@ -11,10 +11,12 @@ import org.typelevel.ci.CIString
 import io.circe.generic.auto.*
 import javax.net.ssl.{SSLContext, TrustManager, X509TrustManager}
 import java.security.cert.X509Certificate
+import fs2.io.net.tls.TLSContext
 
 class AuthClientInterpreter(authServiceUrl: String) extends AuthClient[IO] {
 
-  private val _ = {
+  // Создаём SSLContext, который доверяет всем сертификатам
+  private val trustingSSLContext: SSLContext = {
     val trustManager = new X509TrustManager {
       def getAcceptedIssuers: Array[X509Certificate] = Array.empty
       def checkClientTrusted(chain: Array[X509Certificate], authType: String): Unit = ()
@@ -22,10 +24,17 @@ class AuthClientInterpreter(authServiceUrl: String) extends AuthClient[IO] {
     }
     val ctx = SSLContext.getInstance("TLS")
     ctx.init(null, Array(trustManager), null)
-    SSLContext.setDefault(ctx)
+    ctx
   }
 
-  private val clientResource: Resource[IO, Client[IO]] = EmberClientBuilder.default[IO].build
+  // Создаём TLSContext из доверяющего SSLContext
+  private val tlsContext: TLSContext = TLSContext.fromSSLContext[IO](trustingSSLContext)
+
+  // Собираем клиент с этим TLS-контекстом
+  private val clientResource: Resource[IO, Client[IO]] =
+    EmberClientBuilder.default[IO]
+      .withTLSContext(tlsContext)
+      .build
 
   def validateToken(token: String): IO[Option[UserInfo]] =
     clientResource.use { httpClient =>
