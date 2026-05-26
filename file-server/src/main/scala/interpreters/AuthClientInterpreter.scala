@@ -14,7 +14,8 @@ import java.security.cert.X509Certificate
 
 class AuthClientInterpreter(authServiceUrl: String) extends AuthClient[IO] {
 
-  private val _ = {
+  // Устанавливаем глобальный SSLContext, который доверяет всем сертификатам
+  locally {
     val trustManager = new X509TrustManager {
       def getAcceptedIssuers: Array[X509Certificate] = Array.empty
       def checkClientTrusted(chain: Array[X509Certificate], authType: String): Unit = ()
