@@ -18,7 +18,7 @@ object FileServerConfig:
     storageDir       = sys.env.getOrElse("STORAGE_DIR", "./storage"),
     metaDbPath       = sys.env.getOrElse("META_DB_PATH", "meta.enc"),
     metaDbKey        = sys.env.getOrElse("META_DB_KEY", "0123456789abcdef"),
-    authServiceUrl   = sys.env.getOrElse("AUTH_SERVICE_URL", "https://194.67.92.112:8081"),
+    authServiceUrl   = sys.env.getOrElse("AUTH_SERVICE_URL", "https://localhost:8081"),
     defaultQuotaBytes = sys.env.getOrElse("DEFAULT_QUOTA_BYTES", "104857600").toLong,
     auditLogPath     = sys.env.getOrElse("AUDIT_LOG_PATH", "audit.log")
   )

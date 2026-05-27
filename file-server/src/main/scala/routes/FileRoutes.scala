@@ -19,7 +19,7 @@ import io.circe.generic.auto.*
 class FileRoutes(storage: FileStorage[IO], authClient: AuthClient[IO], auditLog: AuditLog[IO], cfg: FileServerConfig) {
 
   val routes: HttpRoutes[IO] = HttpRoutes.of[IO] {
-    case GET -> Root                          => SeeOther(Location(uri"https://194.67.92.112:8081/login"))
+    case GET -> Root                          => SeeOther(Location(uri"https://localhost:8081/login"))
     case req @ GET -> Root / "files"          => listFiles(req)
     case req @ GET -> Root / "upload"         => html.uploadPage(None)
     case req @ POST -> Root / "upload"        => uploadFile(req)
@@ -191,7 +191,7 @@ class FileRoutes(storage: FileStorage[IO], authClient: AuthClient[IO], auditLog:
   }
 
   private def logout(req: Request[IO]): IO[Response[IO]] = {
-    SeeOther(Location(uri"https://194.67.92.112:8081/login"))
+    SeeOther(Location(uri"https://localhost:8081/login"))
       .map(_.addCookie(ResponseCookie("jwt", "", path = Some("/"), maxAge = Some(0), httpOnly = true, sameSite = Some(SameSite.Lax))))
   }
 
